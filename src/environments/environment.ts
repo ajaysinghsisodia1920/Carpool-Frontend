@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  apiUrl:'https://localhost:44334/',
+  clientId: 'ffd5f85f-604b-4878-9ae8-11c57d4cb13e',
+  authority: 'https://login.microsoftonline.com/865cc515-a530-4538-8ef8-072b7b2be759/',
+  redirectUrl: 'http://localhost:4200'
 };
 
 /*

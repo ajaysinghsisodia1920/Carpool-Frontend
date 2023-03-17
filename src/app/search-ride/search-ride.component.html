@@ -1,0 +1,22 @@
+<div class="container">
+    <form [formGroup]="searchRideForm" (ngSubmit)="searchRide()">
+        <div class="row">
+            <h2>Book a ride</h2>
+        </div>
+        <div class="row" >
+            <label>Source</label>
+            <input type="text" formControlName="source">
+        </div>
+        <div class="row">
+            <label>Destination</label>
+            <input type="text"  formControlName="destination">
+        </div>
+        <div class="row">
+            <label>Date</label>
+            <input type="date" formControlName="date">
+        </div>
+        <div class="text-center mt-3">
+            <button >Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,5 @@
+<div class="container">
+    <app-search-ride (source)="source($event)" (destination)="destination($event)"></app-search-ride>
+    <app-card *ngFor="let rideInfo of rideUserInfo" style="display: flex;" [rideInfo]="rideInfo"></app-card>
+</div>
+
