@@ -1,9 +1,10 @@
 export class RideUserInfo{
-    ridername:string="abc";
-    Source!:string;
-    Destination!:string;
+    ridername!:string;
+    source!:string;
+    destination!:string;
     constructor(args: any = {}){
-        this.Source=args.source;
-        this.Destination=args.destination;
+        this.ridername=args.name;
+        this.source=args.source;
+        this.destination=args.destination;
     }
 }

@@ -6,25 +6,19 @@ import { RideUserInfo } from '../Models/RideUserInfo';
 @Injectable({
   providedIn: 'root'
 })
-export class BookingService {
-
-  constructor(private http:HttpClient) { }
+export class OfferingService {
 
   baseUrl:string='https://localhost:44334/';
-  bookRide(email:string,source:string,destination:string){
+  // http: any;
+  constructor(private http:HttpClient) { }
+
+  getOfferedRidesHistory(email:string){
     let queryParams = new HttpParams();
     queryParams = queryParams.append("email",email);
-    queryParams=queryParams.append("source",source);
-    queryParams=queryParams.append("destination",destination);
-    // console.log(destination);
-    return this.http.get(this.baseUrl+'Offering/SearchRides',{params:queryParams}).pipe(
+    return this.http.get(this.baseUrl+'Offering/GetRidesHistory',{params:queryParams}).pipe(
       map((res:any)=>{
         console.log(res);
         return res.map((obj:any)=>new RideUserInfo(obj));
     }))
-  }
-
-  getOfferedRidesHistory(){
-
   }
 }

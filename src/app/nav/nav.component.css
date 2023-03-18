@@ -1,0 +1,15 @@
+.nav{
+    height: 10vh;
+    /* background-color:bisque; */
+}
+.right{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    display: flex;
+    /* background-color: red; */
+}
+.right ul{
+    cursor: pointer;
+    font-weight: bold;
+}

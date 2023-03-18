@@ -1,8 +1,38 @@
-.container{
+.cntnr{
     display: flex;
     /* background-color: blue; */
-    height: 100vh;
-    position: absolute;
-    top: 20vh;
-    left: 8vw;
+    height: 90vh;
+    width: 100vw;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    /* padding-left:10vw;
+    padding-right: 10vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh; */
+    /* left: vw; */
+    flex-wrap: wrap;
+}
+.search{
+    /* background-color: red; */
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    /* position: absolute;
+    left: 10vw;
+    top: 10vh; */
+}
+
+.cards{
+    /* display: flex; */
+    /* background-color: aqua; */
+    width: 60vw;
+    /* position: relative; */
+}
+.cards h2{
+    /* position: absolute; */
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.icards{
+    display: flex;
 }

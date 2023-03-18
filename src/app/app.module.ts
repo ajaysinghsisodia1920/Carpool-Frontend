@@ -8,10 +8,15 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BookingComponent } from './booking/booking.component';
 import { SearchRideComponent } from './search-ride/search-ride.component';
 import { CardComponent } from './card/card.component';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { NavComponent } from './nav/nav.component';
+import { LogoComponent } from './logo/logo.component';
+import { OfferingComponent } from './offering/offering.component';
+import { RidesHistoryComponent } from './rides-history/rides-history.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { CardComponent } from './card/card.component';
     HomeComponent,
     BookingComponent,
     SearchRideComponent,
-    CardComponent
+    CardComponent,
+    NavComponent,
+    LogoComponent,
+    OfferingComponent,
+    RidesHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,7 @@ import { CardComponent } from './card/card.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

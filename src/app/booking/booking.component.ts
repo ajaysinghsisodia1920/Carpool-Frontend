@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RideUserInfo } from '../Models/RideUserInfo';
 import { SearchRideData } from '../Models/SearchRideData';
+import { AuthService } from '../services/auth.service';
 import { BookingService } from '../services/booking.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { BookingService } from '../services/booking.service';
 })
 export class BookingComponent implements OnInit {
 
+  // rideUserInfo:Array<RideUserInfo>=[{ridername:"Ajay Singh",source:"a",destination:"b"}];
   rideUserInfo!:Array<RideUserInfo>;
   rideInfo!:RideUserInfo;
   src!:string;
   dst!:string;
-  email:string="ajay@gmail.com";//replace and  get from the local storage
-  constructor(private bookingService:BookingService) { }
+  email!:string;//replace and  get from the local storage
+  searchRidesCalled:boolean=false;
+  constructor(private authService:AuthService,private bookingService:BookingService) { }
 
   ngOnInit(): void {
     // this.searchDate.header="book";
@@ -33,6 +36,8 @@ export class BookingComponent implements OnInit {
   }
 
   searchRiders(){
+    this.searchRidesCalled=true;
+    this.email=this.authService.loadCurrentUser().email;
     this.bookingService.bookRide(this.email,this.src,this.dst).subscribe((res)=>{
         console.log(res);
         this.rideUserInfo=res;
