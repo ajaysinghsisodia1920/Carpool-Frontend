@@ -1,3 +1,16 @@
+.wpage{
+    /* height: 100vh; */
+    width: 100vw;
+    /* background-color: brown; */
+    background-image: url('src/assets/img4.png'); 
+    background-size: contain;
+    background-position-y: bottom;
+    background-repeat: repeat-x;
+    /* background-position: bottom; */
+    position: fixed;
+    bottom: 0px;
+    top: 0px;
+}
 .cntnr{
     display: flex;
     /* background-color: blue; */
@@ -14,7 +27,7 @@
 }
 .search{
     /* background-color: red; */
-    width: 20vw;
+    width: 28vw;
     display: flex;
     align-items: center;
     /* position: absolute;
@@ -30,9 +43,11 @@
 }
 .cards h2{
     /* position: absolute; */
-    padding-left: 10px;
-    padding-top: 10px;
+    /* background-color: aquamarine; */
+    color: #9319ff;
+    font-weight: bold;
 }
 .icards{
     display: flex;
+    flex-wrap:wrap ;
 }

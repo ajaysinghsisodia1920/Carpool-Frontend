@@ -1,0 +1,43 @@
+.wpage{
+    /* height: 100vh; */
+    width: 100vw;
+    /* background-color: brown; */
+    background-image: url('src/assets/img4.png'); 
+    background-size: contain;
+    background-position-y: bottom;
+    background-repeat: repeat-x;
+    /* background-position: bottom; */
+    position: fixed;
+    bottom: 0px;
+    top: 0px;
+}
+.container{
+    display: flex;
+    /* align-items: center; */
+    /* background-color: brown; */
+}
+
+.bride{
+    /* background-color: red; */
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    /* padding-left: 0px; */
+}
+.oride{
+    /* background-color: blue; */
+    margin-top: 10px;
+}
+.bride h6,.oride h6{
+    /* background-color: palevioletred; */
+    padding: 10px;
+    padding-left: 40px;
+    color:white;
+    width:60%;
+}
+.bride h6{
+    background-color: #9319ff;
+}
+.oride h6{
+    background-color: #ffac19;
+}

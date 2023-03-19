@@ -1,0 +1,35 @@
+.side{
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.top{
+    height: 14vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right:0px;
+}
+
+.top img{
+    position: absolute;
+    left: 40px;
+    top:24px;
+}
+
+.img{
+    height: 70vh;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+.img img{
+    position: absolute;
+    bottom: 0px;
+    width: 70vw;
+    height: 70vh;
+}

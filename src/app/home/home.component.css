@@ -1,9 +1,28 @@
+.wpage{
+    /* height: 100vh; */
+    width: 100vw;
+    /* background-color: brown; */
+    background-image: url('src/assets/img3.png'); 
+    background-size: contain;
+    background-position-y: bottom;
+    background-repeat: repeat-x;
+    /* background-position: bottom; */
+    position: fixed;
+    bottom: 0px;
+    top: 0px;
+}
 .box {
     border: 2px solid black;
-    padding: 20px;
+    padding: 50px;
     margin: 10px;
     cursor: pointer;
     /* background-color: red; */
+    color: white;
+    font-weight: bolder;
+    border: none;
+    font-size: larger;
+    position: relative;
+    top: -10vh;
 }
 
 .container {
@@ -11,4 +30,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: red; */
+}
+
+#book{
+    background-color: #9319ff;
+    
+}
+#offer{
+    background-color: #ffac19;
 }

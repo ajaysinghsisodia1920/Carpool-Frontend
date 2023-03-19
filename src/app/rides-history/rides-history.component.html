@@ -1,3 +1,13 @@
-<div>
-    <app-card *ngFor="let ride of offeredRide" [rideInfo]="ride"></app-card>
+<div class="wpage">
+    <app-nav></app-nav>
+    <div class="container">
+        <div class="bride">
+            <h6 *ngIf="bookedRide!=null">Booked Ride</h6>
+            <app-card *ngFor="let ride of bookedRide" [rideInfo]="ride"></app-card>
+        </div>
+        <div class="oride">
+            <h6 *ngIf="offeredRide!=null">Offered Ride</h6>
+            <app-card *ngFor="let ride of offeredRide" [rideInfo]="ride"></app-card>
+        </div>
+    </div>
 </div>

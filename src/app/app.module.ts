@@ -17,7 +17,9 @@ import { NavComponent } from './nav/nav.component';
 import { LogoComponent } from './logo/logo.component';
 import { OfferingComponent } from './offering/offering.component';
 import { RidesHistoryComponent } from './rides-history/rides-history.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { SideComponent } from './side/side.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +33,20 @@ import { RidesHistoryComponent } from './rides-history/rides-history.component';
     NavComponent,
     LogoComponent,
     OfferingComponent,
-    RidesHistoryComponent
+    RidesHistoryComponent,
+    SideComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+    timeOut: 2000,
+    positionClass: 'toast-bottom-right',
+    preventDuplicates: true,
+    }), // ToastrModule added
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

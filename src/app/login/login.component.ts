@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../Models/User';
 import { AuthService } from '../services/auth.service';
@@ -18,13 +18,16 @@ export class LoginComponent implements OnInit {
   }
 
   loginForm=new FormGroup({
-    email:new FormControl(""),
-    password:new FormControl("")
+    email:new FormControl("",[Validators.required,Validators.email]),
+    password:new FormControl("",[Validators.required,Validators.minLength(5),Validators.maxLength(15)])
   });
 
   loginSubmitted(){
     // http://localhost:48806
 
+    console.log(this.loginForm);
+    console.log(this.getEmail());
+    console.log(this.getPassword());
     this.user={
       EmailId:this.loginForm.value.email!,
       Username:'',
@@ -37,6 +40,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  getEmail(){
+    return this.loginForm.get("email");
+  }
 
+  getPassword(){
+    return this.loginForm.get("password");
+  }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RideUserInfo } from '../Models/RideUserInfo';
 import { AuthService } from '../services/auth.service';
+import { BookingService } from '../services/booking.service';
 import { OfferingService } from '../services/offering.service';
 import { SharedService } from '../services/shared.service';
 
@@ -11,27 +12,28 @@ import { SharedService } from '../services/shared.service';
 })
 export class NavComponent implements OnInit {
 
-  rideUserInfo!:Array<RideUserInfo>;
-  constructor(private authService:AuthService,private offeringService:OfferingService,private sharedService:SharedService) { }
+  offeredRideUserInfo!: Array<RideUserInfo>;
+  bookedRideUserInfo!:Array<RideUserInfo>;
+  constructor(private authService: AuthService, private offeringService: OfferingService, private sharedService: SharedService, private bookingService: BookingService) { }
 
   ngOnInit(): void {
   }
 
-  logOut(){
+  logOut() {
     this.authService.removeToken();
   }
 
-  getRidesHistory(){
-    var userInfo=this.authService.loadCurrentUser();
-    var email=userInfo.email;
-    this.offeringService.getOfferedRidesHistory(email).subscribe((res:any)=>{
-      console.log(res);
-      this.rideUserInfo=res;
-      this.sharedService.inject(this.rideUserInfo);
+  getRidesHistory() {
+    var userInfo = this.authService.loadCurrentUser();
+    var email = userInfo.email;
+    this.offeringService.getOfferedRidesHistory(email).subscribe((res: any) => {
+      this.bookedRideUserInfo = res;
+      this.sharedService.injectOfferedUserInfo(this.bookedRideUserInfo);
     });
-    this.offeringService.getOfferedRidesHistory(email).subscribe((res:any)=>{
-      console.log(res);
+    this.bookingService.getBookedRidesHistory(email).subscribe((res: any) => {
+      this.offeredRideUserInfo=res;
+      this.sharedService.injectBookedUserInfo(this.offeredRideUserInfo);
     });
-    
+
   }
 }

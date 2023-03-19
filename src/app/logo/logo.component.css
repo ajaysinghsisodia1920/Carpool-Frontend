@@ -1,0 +1,13 @@
+.img{
+    height: 8vh;
+    width: 6vw;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* background-color: red; */
+    background-image: url('src/assets/logo (1).png'); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 2vw;
+    top: 2vh;
+}

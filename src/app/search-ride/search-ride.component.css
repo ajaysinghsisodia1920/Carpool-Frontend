@@ -1,6 +1,24 @@
 .card{
     /* border: 2px solid  black; */
-    padding: 50px 30px;
+    padding: 0px 30px;
+    height: 75vh;
     /* padding-top: 20px; */
     /* padding-bottom: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    /* background-color: beige; */
+    margin: 10px 0px;
+}
+#btn{
+    background-color: #ffac19;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+}
+form{
+    /* background-color: aquamarine; */
 }

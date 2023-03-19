@@ -1,4 +1,4 @@
-<div class="container" style="display:flex;justify-content:center">
+<!-- <div class="container" style="display:flex;justify-content:center">
     <form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
         <div class="row">
             <h2> Register</h2>
@@ -23,4 +23,65 @@
             <a routerLink="/">Login</a>
         </div>
     </form>
+</div> -->
+
+<!-- <div class="container" style="display:flex;justify-content:center">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+        <div class="row">
+            <h2>LogIn</h2>
+        </div>
+        <div class="row">
+            <label>Email</label>
+            <input type="text" formControlName="email">
+        </div>
+        <div class="row">
+            <label>Password</label>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="row">
+            <button>Submit</button>
+        </div>
+        <div>
+            <span>Not a member yet?</span>
+            <a routerLink="/register">SignUp</a>
+        </div>
+    </form>
+</div> -->
+
+<div class="login">
+    <app-side></app-side>
+    <div class="loginn">
+        <div class="inner">
+            <p id="login">Sign Up</p>
+            <div class="line"><hr></div>
+            <form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+                <div class="email">
+                    <input type="text" placeholder="Enter email id" formControlName="email">
+                    <label for="" style="color: red;" *ngIf="getEmail()?.errors?.['required'] && (getEmail()?.touched)">email is required</label>
+                    <label for="" style="color: red;" *ngIf="getEmail()?.errors?.['email']">email is invalid</label>
+                </div>
+                <div class="password">
+                    <input type="password" placeholder="Enter Password" formControlName="password">
+                    <label for="" style="color: red;" *ngIf="getPassword()?.errors?.['required'] && getPassword()?.touched">Password is required</label>
+                    <label for="" style="color: red;" *ngIf="(getPassword()?.errors?.['minlength'] || getPassword()?.errors?.['maxlength']) && getPassword()?.touched">Min length 5 and max length 15 is required</label>
+                </div>
+                <div class="cnfpassword">
+                    <input type="password" placeholder="Confirm Password" formConrolName="confirmPassword">
+                    <label for="" style="color:red" *ngIf="getConfirmPassword()?.errors?.['required'] && getConfirmPassword()?.touched">Please confirm the password</label>
+                    <label for="" style="color: red;" *ngIf="rptPass">Password is not matching</label>
+                </div>
+                <div class="button">
+                    <button [disabled]="registerForm.invalid">Submit</button>
+                </div>
+            </form>
+
+            <div class="signup">
+                <p>Already a member?</p>
+                <div class="butt">
+                    <p><a routerLink="/" style="color: white;text-decoration:none">Log In</a></p>
+                    <div class="line"><hr></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

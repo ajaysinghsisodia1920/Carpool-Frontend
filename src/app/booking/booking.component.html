@@ -1,14 +1,16 @@
-<app-nav></app-nav>
-<div class="cntnr">
-    <div class="search">
-        <app-search-ride (source)="source($event)" (destination)="destination($event)"></app-search-ride>
-    </div>
-    <div class="cards">
-        <!-- <h2 *ngIf="rideUserInfo.length>0">Your Matches</h2>
-        <h2 *ngIf="rideUserInfo.length==0 && searchRidesCalled">No Matches Found</h2> -->
-        <div class="icards">
-            <app-card *ngFor="let rideInfo of rideUserInfo" style="display: flex;" [rideInfo]="rideInfo"></app-card>
+<div class="wpage">
+    <app-nav></app-nav>
+    <div class="cntnr">
+        <div class="search">
+            <app-search-ride [title]="title">
+            </app-search-ride>
+        </div>
+        <div class="cards">
+            <h2 *ngIf="rideUserInfo!=null && rideUserInfo.length>0">Your Matches</h2>
+            <!-- <h2 *ngIf="rideUserInfo==null && searchRidesCalled">No Matches Found</h2> -->
+            <div class="icards">
+                <app-card *ngFor="let rideInfo of rideUserInfo" style="display: flex;" [rideInfo]="rideInfo"></app-card>
+            </div>
         </div>
     </div>
 </div>
-

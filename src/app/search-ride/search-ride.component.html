@@ -1,7 +1,7 @@
 <div class="card">
     <form [formGroup]="searchRideForm" (ngSubmit)="searchRide()">
         <div class="row">
-            <h2>Book a ride</h2>
+            <h2>{{title}} a ride</h2>
         </div>
         <div class="row" >
             <label>Source</label>
@@ -16,7 +16,7 @@
             <input type="date" formControlName="date">
         </div>
         <div class="text-center mt-3">
-            <button >Submit</button>
+            <button id="btn">Submit</button>
         </div>
     </form>
 </div>
